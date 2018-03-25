@@ -1,12 +1,25 @@
 package cn.school.thoughtworks.section2;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PracticeB {
     Map<String, Integer> countSameElements(List<String> collection1) {
-        //实现练习要求，并改写该行代码。
-
-        return null;
+        //把1集合中相同的元素统计出数量
+        ArrayList<String> list1 = new ArrayList<>(collection1);
+        Map<String, Integer> result = new HashMap<>();
+        int temp = 1;
+        for (String list : list1) {
+            if (list.contains("-")) {
+                temp = Integer.parseInt(list.split("-")[1]);
+                list = list.split("-")[0];
+            }
+            if (result.containsKey(list)) {
+                result.put(list, result.get(list) + 1);
+            } else {
+                result.put(list, temp);
+            }
+        }
+        return result;
     }
+
 }
