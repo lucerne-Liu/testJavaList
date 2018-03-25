@@ -1,2 +1,0 @@
-# testJavaList
-exercise for JAVA
